@@ -1,0 +1,94 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "serviceImg": "/assets/card-images/doctor.png",
+            "name": "Doctors",
+            "providers": [
+                {
+                    "id": 101,
+                    "name": "Dr. John Doe",
+                    "education": "MBBS",
+                    "experince": "5+",
+                    "workingAt": "Punjab Institute of Cardiology, Lahore",
+                    "specialization": "Cardiologist",
+                    "img": "/assets/services/doctor/doctor1.png",
+                    "email": "john.doe@hospital.com",
+                    "phone": "0316-3866329",
+                    "fees": 2000
+                },
+                {
+                    "id": 102,
+                    "name": "Dr. Jane Smith",
+                    "education": "BD(Bachelor of Medicine)",
+                    "experince": "10+",
+                    "workingAt": "Punjab Institute of Cardiology, Lahore",
+                    "specialization": "Pediatrician",
+                    "email": "jane.smith@hospital.com",
+                    "img": "/assets/services/doctor/doctor2.png",
+                    "phone": "0316-3866329",
+                    "fees": 2000
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Lawyers",
+            "serviceImg": "/assets/card-images/lawyer.png",
+            "providers": [
+                {
+                    "id": 201,
+                    "name": "Attorney Michael Lee",
+                    "img": "/assets/services/lawyer/lawyer1.png",
+                    "specialization": "Criminal Law",
+                    "email": "michael.lee@lawfirm.com",
+                    "phone": "345-678-9012"
+                },
+                {
+                    "id": 202,
+                    "name": "Zubair",
+                    "specialization": "Criminal Law",
+                    "email": "michael.lee@lawfirm.com",
+                    "img": "/assets/services/doctor/doctor2.png",
+                    "phone": "345-678-9012"
+                },
+                {
+                    "id": 203,
+                    "name": "Aqsa Abid",
+                    "specialization": "Criminal Law",
+                    "img": "/assets/services/doctor/doctor1.png",
+                    "email": "michael.lee@lawfirm.com",
+                    "phone": "345-678-9012"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Real State Agent",
+            "serviceImg": "/assets/card-images/real-state.png",
+            "providers": [
+                {
+                    "id": 301,
+                    "name": "Muhammed Muneeb ",
+                    "specialization": "Criminal Law",
+                    "email": "michael.lee@lawfirm.com",
+                    "phone": "345-678-9012"
+                },
+                {
+                    "id": 302,
+                    "name": "M.Zubair",
+                    "specialization": "Criminal Law",
+                    "email": "michael.lee@lawfirm.com",
+                    "phone": "345-678-9012"
+                },
+                {
+                    "id": 303,
+                    "name": "Aqsa Abid",
+                    "specialization": "Criminal Law",
+                    "email": "michael.lee@lawfirm.com",
+                    "phone": "345-678-9012"
+                }
+            ]
+        }
+    ]
+}
