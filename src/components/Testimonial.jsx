@@ -23,7 +23,7 @@ const Testimonial = ({
     return (
         <div className='p-9 min-h-screen'>
             <div className='my-9'>
-                <p className=' text-primaryColor font-semibold my-5'>__Testimonials</p>
+
                 <h1 className='sm:text-4xl text-3xl font-semibold'>
                     Hear <span className=' text-primary'>What</span> Others Have to Say
                 </h1>

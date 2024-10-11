@@ -1,8 +1,9 @@
-const { providerDasbboard } = require('../Controllers/ServiceProvider').default;
-const { authenticateUser, isServiceProvider } = require('../Middlewares/Authorization');
+import { providerDasbboard } from '../Controllers/ServiceProvider.js';
+import { authenticateUser, isServiceProvider } from '../Middlewares/Authorization.js';
+import express from 'express';
 
-const router = require('express').Router();
+const router = express.Router();  // Correct usage in ES6
 
-router.get('/dashboard', authenticateUser, isServiceProvider, providerDasbboard);
+router.get('/sp_dashboard', authenticateUser, providerDasbboard);
 
-module.exports = router;
+export { router };

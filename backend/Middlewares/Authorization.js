@@ -1,21 +1,40 @@
-const jwt = require('jsonwebtoken');
-
+import jsonwebtoken from 'jsonwebtoken';
+const { verify } = jsonwebtoken
 // Middleware to verify JWT and authenticate user
-const authenticateUser = (req, res, next) => {
-    const token = req.headers['authorization'];
 
-    if (!token) {
-        return res.status(401).json({ message: 'Access Denied. No token provided.' });
-    }
+const authenticateUser = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    // if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    //     return res.status(401).json({ message: 'Access Denied. No token provided.' });
+    // }
+
+    // const token = authHeader.split(' ')[1]; // Extract token from 'Bearer token'
+    // if (!token) {
+    //     return res.status(401).json({ message: 'Access Denied. No token provided.' });
+    // }
 
     try {
-        const decoded = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
+        // Verify the token
+        const decoded = jsonwebtoken.verify(authHeader, process.env.JWT_ACCESS_SECRET);
+        console.log('====================================');
+        console.log("decpdetoken", decoded);
+        console.log('====================================');
+        // Attach the decoded user to the request object
         req.user = decoded;
+
+        // Proceed to the next middleware/controller
         next();
     } catch (error) {
-        return res.status(401).json({ message: 'Invalid or expired token' });
+        // Catch expired or invalid token errors
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ message: 'Token has expired' });
+        }
+
+        return res.status(401).json({ message: 'Invalid token' });
     }
 };
+
+
 
 // Middleware to check admin role
 const isAdmin = (req, res, next) => {
@@ -41,4 +60,4 @@ const isServiceProvider = (req, res, next) => {
     next();
 };
 
-module.exports = { authenticateUser, isAdmin, isClient, isServiceProvider };
+export { authenticateUser, isAdmin, isClient, isServiceProvider };

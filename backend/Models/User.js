@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import pkg from 'mongoose';
+const { Schema, models, model } = pkg;
 
 const UserSchema = new Schema({
     name: {
@@ -20,30 +20,10 @@ const UserSchema = new Schema({
         enum: ['admin', 'client', 'service_provider'],
         default: 'client',
         required: true,
-    },
-    address: {
-        type: String,
-        required: true
-    },
-    website: {
-        type: String,
-        default: null,
-    },
-    phoneNumber: {
-        type: String,
-        default: null,
-        required: true,
-    },
-    company: {
-        type: String,
-        default: null,
-    },
-    status: {
-        type: String,
-        enum: ['pending', 'approved', 'rejected'], // Add user status
-        default: 'pending', // New users are set as pending by default
     }
 });
 
-const UserModel = mongoose.model('users', UserSchema);
-module.exports = UserModel;
+// Check if the model exists to prevent recompiling it
+const UserModel = models.users || model('users', UserSchema);
+
+export default UserModel;

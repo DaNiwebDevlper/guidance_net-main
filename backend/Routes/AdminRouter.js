@@ -1,9 +1,9 @@
-const { adminDasbboard, createAdmin } = require('../Controllers/AdminController');
-const { authenticateUser, isAdmin } = require('../Middlewares/Authorization');
+import { adminDasbboard, createAdmin } from '../Controllers/AdminController.js';
+import { authenticateUser, isAdmin } from '../Middlewares/Authorization.js';
+import express from 'express';
 
-const router = require('express').Router();
+const router = express.Router();  // Correct usage in ES6
+router.get('/dashboard', authenticateUser, isAdmin, adminDasbboard);
+router.post('/create-admin-user', authenticateUser, isAdmin, createAdmin);
 
-router.get('/dashboard', authenticateUser, isAdmin , adminDasbboard);
-router.post('/create-admin-user', authenticateUser, isAdmin , createAdmin);
-
-module.exports = router;
+export { router };

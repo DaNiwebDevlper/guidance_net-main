@@ -1,9 +1,9 @@
-const bcrypt = require('bcrypt');
-const UserModel = require('../Models/User');
+import { hash } from 'bcrypt';
+import UserModel from '../Models/User.js';
 
-const adminDasbboard = async (req, res) =>{
+const adminDasbboard = async (req, res) => {
     res.json({
-        msg : "Admin Dashboard"
+        msg: "Admin Dashboard"
     })
 }
 
@@ -22,7 +22,7 @@ const createAdmin = async (req, res) => {
             return res.status(409).json({ message: 'Email already in use' });
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await hash(password, 10);
 
         // Create a new admin user
         const newAdmin = new UserModel({
@@ -51,7 +51,7 @@ const createAdmin = async (req, res) => {
 }
 
 
-module.exports = {
+export {
     adminDasbboard,
     createAdmin
 }

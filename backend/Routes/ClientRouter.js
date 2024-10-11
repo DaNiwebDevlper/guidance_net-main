@@ -1,8 +1,9 @@
-const { clientDasbboard } = require('../Controllers/ClientController');
-const { authenticateUser, isClient } = require('../Middlewares/Authorization');
+import clientDasbboard from '../Controllers/ClientController.js';
+import { authenticateUser, isClient } from '../Middlewares/Authorization.js';
+import express from 'express';
 
-const router = require('express').Router();
+const router = express.Router();  // Correct usage in ES6
 
-router.get('/dashboard', authenticateUser, isClient , clientDasbboard);
+router.get('/dashboard', authenticateUser, isClient, clientDasbboard);
 
-module.exports = router;
+export { router };

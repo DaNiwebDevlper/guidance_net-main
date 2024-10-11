@@ -9,7 +9,13 @@ import ServiceDetail from "../pages/services/ServiceDetail"
 import HeaderLine from "./HeaderLine";
 import EmployeeCard from "./EmployeeCard";
 import LinkComp from "./LinkComp";
+import Loader from "./loader/Loader";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
+import AddForm from "./admin/addProviderForm/AddForm";
+import EditForm from "./admin/editPageForm/EditForm";
+import AppointmentModal from "./AppointmentModel";
 LinkComp
 export {
-    Navbar, LinkComp, Footer, ServiceCard, Login, LandingPage, Banner, Testimonial, ServiceDetail, HeaderLine, EmployeeCard
+    Navbar, LinkComp, Footer, ServiceCard, Login, LandingPage, Banner, Testimonial, ServiceDetail, HeaderLine, EmployeeCard, Loader, LoginForm, RegisterForm, AddForm, EditForm, AppointmentModal
 }
